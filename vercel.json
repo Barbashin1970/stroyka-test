@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "public": true,
+  "buildCommand": "echo 'Static site - no build required'",
+  "outputDirectory": ".",
+  "framework": "static",
+  "routing": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
