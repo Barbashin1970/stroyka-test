@@ -612,6 +612,13 @@ function renderModulesGrid() {
 
 // Start module test
 function startModule(moduleId) {
+  // В функции startModule() добавьте:
+const navigationDiv = document.getElementById('navigation');
+if (navigationDiv) {
+  navigationDiv.classList.remove('hidden');
+  navigationDiv.style.display = 'flex'; // Явно устанавливаем правильное значение
+}
+  
   // Convert to number if it's a numeric string
   const normalizedId = (typeof moduleId === 'string') ? parseInt(moduleId) : moduleId;
   currentModule = modulesData.find(m => m.id === normalizedId);
@@ -1134,7 +1141,6 @@ function showResults() {
   const navigationDiv = document.getElementById('navigation');
   if (navigationDiv) {
     navigationDiv.classList.add('hidden');
-    navigationDiv.style.display = 'none'; // Ensure it's fully hidden
   }
 }
 
@@ -1278,7 +1284,6 @@ function retakeTest() {
   const navigationDiv = document.getElementById('navigation');
   if (navigationDiv) {
     navigationDiv.classList.remove('hidden');
-    navigationDiv.style.display = 'flex'; // Restore display
   }
   
   renderQuestion();
