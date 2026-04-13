@@ -402,10 +402,12 @@ const modulesData = [
         items: [
           { number: "1", text: "Модели 7B (например, Llama 3.2)", correct: "Б" },
           { number: "2", text: "Модели 13B и выше", correct: "А" }
+          { number: "3", text: "Модели онлайн, например GigaChat", correct: "В" }
         ],
         rightOptions: [
           { letter: "А", text: "Более качественные ответы, лучше понимают сложные задачи, но требуют мощного ПК (от 16 ГБ RAM)" },
           { letter: "Б", text: "Быстрые и лёгкие, подходят для большинства текстовых задач на обычных компьютерах (от 8 ГБ RAM)" }
+          { letter: "В", text: "Максимальная скорость обработки, данные уходят на внешний сервер (не подходят для конфиденциальных задач)" }
         ]
       }
     ]
@@ -743,17 +745,6 @@ function renderMatching(question) {
     });
     
     html += `</select></div>`;
-  });
-  
-  html += `</div><div class="matching-column"><div class="column-title">Определения</div>`;
-  
-  question.rightOptions.forEach(opt => {
-    html += `
-      <div class="right-option">
-        <div class="right-option-letter">${opt.letter}.</div>
-        <div>${opt.text}</div>
-      </div>
-    `;
   });
   
   html += `</div></div></div>`;
